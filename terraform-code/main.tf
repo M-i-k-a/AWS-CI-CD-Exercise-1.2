@@ -12,7 +12,7 @@ terraform {
     workspaces {
       name = "terraform-test"
     }
-    token = "1h9uYPXiXvrbsw.atlasv1.GuXJeUvQSNHS0OwTcpYpTYfppkTEvu1TdojiFAnvS1wBpxX75BXre9hdaAnJZilnN18"
+    token = "****"
   }
 }
 
