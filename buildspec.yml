@@ -16,6 +16,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - export TF_LOG=TRACE
       - terraform apply
   post_build:
     commands:
