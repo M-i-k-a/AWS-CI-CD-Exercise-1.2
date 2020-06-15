@@ -7,13 +7,14 @@ phases:
       - unzip terraform_0.12.26_linux_386.zip
       - mv terraform /bin
       - rm terraform_0.12.26_linux_386.zip
-      - terraform --help
+      #- terraform --help
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
+      - cd terraform-code
       - terraform init
   post_build:
     commands:
