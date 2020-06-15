@@ -15,7 +15,7 @@ phases:
       - terraform validate
   build:
     commands:
-      - echo Buildd started on `date`
+      - echo Build started on `date`
       - export TF_LOG=TRACE
       - terraform apply
   post_build:
