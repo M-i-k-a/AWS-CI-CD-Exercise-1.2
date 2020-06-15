@@ -38,14 +38,6 @@ resource "aws_dynamodb_table" "terraform_state_locks" {
   }
 }
 
-terraform {
-  backend "s3" {
-    key = "statefile.tfstate"
-    bucket = "g-cloud-academy-terraform-backend"
-    dynamodb_table = "terraform-state-locking"
-  }
-}
-
 resource "aws_s3_bucket" "terraform_s3_bucket" {
     bucket = "g-cloud-academy-terraform-github-5"
     cors_rule {
