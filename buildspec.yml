@@ -17,7 +17,7 @@ phases:
     commands:
       - echo Build started on `date`
       - export TF_LOG=TRACE
-      - terraform apply
+      - terraform apply -auto-approve
   post_build:
     commands:
       - echo Build completed on `date`
