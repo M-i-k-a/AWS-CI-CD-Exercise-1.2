@@ -5,7 +5,7 @@ phases:
     commands:
       - wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_386.zip
       - unzip terraform_0.12.26_linux_386.zip
-      #- sudo mv terraform /bin
+      - mv terraform /bin
       - rm terraform_0.12.26_linux_386.zip
       - terraform --help
   pre_build:
