@@ -5,7 +5,7 @@ env:
   #  key: "value"
   #  key: "value"
   secrets-manager:
-    TFTOKEN: xtoken:x-token
+    TFTOKEN: TFToken:tftoken
 
 phases:
   install:
@@ -19,8 +19,8 @@ phases:
       - echo $TFTOKEN
       - echo Run Terrafron init
       - cd terraform-code
-      #- terraform init
-      #- terraform validate
+      - terraform init
+      - terraform validate
   build:
     commands:
       - echo Build started on `date`
