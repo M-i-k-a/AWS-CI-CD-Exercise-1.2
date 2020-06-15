@@ -1,5 +1,12 @@
 version: 0.2
 
+env:
+  #parameter-store:
+  #  key: "value"
+  #  key: "value"
+  secrets-manager:
+    TFTOKEN: xtoken:x-token
+
 phases:
   install:
     commands:
@@ -9,15 +16,16 @@ phases:
       - rm terraform_0.13.0-beta1_linux_386.zip
   pre_build:
     commands:
+      - echo $TFTOKEN
       - echo Run Terrafron init
       - cd terraform-code
-      - terraform init
-      - terraform validate
+      #- terraform init
+      #- terraform validate
   build:
     commands:
       - echo Build started on `date`
       - export TF_LOG=TRACE
-      - terraform apply -auto-approve
+      #- terraform apply -auto-approve
   post_build:
     commands:
       - echo Build completed on `date`
