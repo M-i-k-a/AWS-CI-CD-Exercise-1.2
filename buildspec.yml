@@ -3,10 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_386.zip
-      - unzip terraform_0.12.26_linux_386.zip
+      - wget https://releases.hashicorp.com/terraform/0.13.0-beta1/terraform_0.13.0-beta1_linux_386.zip
+      - unzip terraform_0.13.0-beta1_linux_386.zip
       - mv terraform /bin
-      - rm terraform_0.12.26_linux_386.zip
+      - rm terraform_0.13.0-beta1_linux_386.zip
       #- terraform --help
   pre_build:
     commands:
