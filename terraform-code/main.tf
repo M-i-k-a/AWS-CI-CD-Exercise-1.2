@@ -19,14 +19,14 @@ provider "aws" {
 terraform {
   backend "s3" {
     key = "statefile.tfstate"
-    bucket = var.bucket_name
-    dynamodb_table = var.table_name
+    bucket = "g-cloud-academy-terraform-backend"
+    dynamodb_table = "terraform-state-locking"
   }
 }
 
 resource "aws_s3_bucket" "terraform_state" {
 
-  bucket = var.bucket_name
+  bucket = "g-cloud-academy-terraform-backend"
 
   # Enable versioning so we can see the full revision history of our
   # state files
@@ -36,7 +36,7 @@ resource "aws_s3_bucket" "terraform_state" {
 }
 
 resource "aws_dynamodb_table" "terraform_state_locks" {
-  name         = var.table_name
+  name         = "terraform-state-locking"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
