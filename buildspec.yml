@@ -10,12 +10,14 @@ phases:
       #- terraform --help
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - echo Run Terrafron init
+      - cd terraform-code
+      - terraform init
+      - terraform validate
   build:
     commands:
       - echo Build started on `date`
-      - cd terraform-code
-      - terraform init
+      - terraform apply
   post_build:
     commands:
       - echo Build completed on `date`
