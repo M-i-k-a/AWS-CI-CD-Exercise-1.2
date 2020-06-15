@@ -17,6 +17,7 @@ phases:
   pre_build:
     commands:
       - echo $TFTOKEN
+      - export TF_VAR_tf_token=$TFTOKEN
       - echo Run Terrafron init
       - cd terraform-code
       - terraform init

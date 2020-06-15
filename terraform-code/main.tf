@@ -12,7 +12,7 @@ terraform {
     workspaces {
       name = "terraform-test"
     }
-    token = $TFTOKEN
+    token = var.tf_token
   }
 }
 
